@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from backend.core.settings import get_settings
+
 
 class AisService:
     """Coordinates ingestion, cleaning, interpolation and filtering of AIS messages."""
@@ -21,4 +23,7 @@ class AisService:
 
     def find_candidates(self, detection: dict, time_window_hours: int, buffer_km: float) -> list[dict]:
         from engine.attribution.candidate_generation import generate_candidates
-        return generate_candidates(detection, time_window_hours, buffer_km)
+
+        s = get_settings().attribution if hasattr(get_settings(), "attribution") else None
+        hours = s.time_window_hours if s else time_window_hours  # type: ignore[attr-defined]
+        return generate_candidates(detection, hours, buffer_km)

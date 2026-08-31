@@ -30,6 +30,8 @@ dependencies = [
     "celery>=5.3",
     "pyyaml>=6.0",
     "python-dotenv>=1.0",
+    "boto3>=1.34",
+    "pydantic-settings>=2.2",
 ]
 
 [project.optional-dependencies]

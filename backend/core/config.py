@@ -1,4 +1,4 @@
-"""Application settings loaded from environment + YAML config."""
+"""Lightweight YAML config loader (non-secret application tuning)."""
 
 from __future__ import annotations
 
@@ -7,23 +7,21 @@ from functools import lru_cache
 from pathlib import Path
 
 import yaml
-from pydantic import BaseModel
+
+from backend.core.settings import get_settings
 
 
 def _config_dir() -> Path:
-    return Path(__file__).resolve().parents[3] / "config"
+    return Path(__file__).resolve().parents[2] / "config"
 
 
 @lru_cache(maxsize=1)
-def get_settings() -> "Settings":
-    env = os.getenv("APP_ENV", "development")
+def get_yaml_config() -> dict:
+    env = os.getenv("APP_ENV", get_settings().app_env)
     config_path = _config_dir() / f"{env}.yaml"
-    data: dict = {}
-    if config_path.exists():
-        data = yaml.safe_load(config_path.read_text()) or {}
-    return Settings(env=env, raw=data)
+    if not config_path.exists():
+        return {}
+    return yaml.safe_load(config_path.read_text()) or {}
 
 
-class Settings(BaseModel):
-    env: str = "development"
-    raw: dict = {}
+__all__ = ["get_yaml_config", "get_settings"]
