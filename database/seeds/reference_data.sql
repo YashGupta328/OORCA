@@ -1,0 +1,2 @@
+-- Seed reference data placeholder.
+-- E.g. default ESI class sensitivity multipliers, default liability parameters.

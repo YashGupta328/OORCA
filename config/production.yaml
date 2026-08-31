@@ -1,0 +1,49 @@
+app:
+  name: OORCA
+  env: production
+  debug: false
+  log_level: WARNING
+
+database:
+  url: ${DATABASE_URL}
+  pool_size: 25
+  echo: false
+
+redis:
+  url: ${REDIS_URL}
+
+object_storage:
+  endpoint: ${S3_ENDPOINT}
+  access_key: ${S3_ACCESS_KEY}
+  secret_key: ${S3_SECRET_KEY}
+  buckets:
+    raw: ${S3_BUCKET_RAW}
+    processed: ${S3_BUCKET_PROCESSED}
+
+sar:
+  model_path: ${SAR_MODEL_PATH}
+  device: cuda
+  min_area_km2: 0.05
+  confidence_threshold: 0.75
+
+ais:
+  ingestion_buffer_km: 50
+  interpolation_method: linear
+
+drift:
+  backend: opendrift
+  default_hindcast_hours: 96
+  default_forecast_hours: 120
+  particle_count: 50000
+
+attribution:
+  time_window_hours: 12
+  weights:
+    temporal: 0.2
+    spatial: 0.3
+    drift: 0.4
+    vessel: 0.1
+
+liability:
+  monte_carlo_iterations: 10000
+  discount_rate: 0.03

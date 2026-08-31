@@ -1,0 +1,1 @@
+"""Discounting for time-distributed losses."""

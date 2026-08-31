@@ -1,0 +1,1 @@
+# Investigation workflow components placeholder.

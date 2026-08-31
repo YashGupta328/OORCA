@@ -1,0 +1,1 @@
+"""Spatial intersection of spill footprint with ESI polygons."""

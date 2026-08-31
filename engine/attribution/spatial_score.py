@@ -1,0 +1,1 @@
+"""Spatial proximity scoring for candidates."""

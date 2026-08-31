@@ -1,0 +1,1 @@
+"""Tourism loss estimation."""

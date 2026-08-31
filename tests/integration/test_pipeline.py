@@ -1,0 +1,1 @@
+"""End-to-end pipeline integration test."""

@@ -1,0 +1,1 @@
+"""Apply ESI class sensitivity multipliers."""

@@ -1,0 +1,49 @@
+app:
+  name: OORCA
+  env: development
+  debug: true
+  log_level: DEBUG
+
+database:
+  url: postgresql://oorca:oorca@localhost:5432/oorca
+  pool_size: 5
+  echo: true
+
+redis:
+  url: redis://localhost:6379/0
+
+object_storage:
+  endpoint: http://localhost:9000
+  access_key: oorca
+  secret_key: oorca-secret
+  buckets:
+    raw: oorca-raw
+    processed: oorca-processed
+
+sar:
+  model_path: ./models/sar/checkpoints
+  device: cpu
+  min_area_km2: 0.05
+  confidence_threshold: 0.6
+
+ais:
+  ingestion_buffer_km: 50
+  interpolation_method: linear
+
+drift:
+  backend: opendrift
+  default_hindcast_hours: 48
+  default_forecast_hours: 72
+  particle_count: 10000
+
+attribution:
+  time_window_hours: 6
+  weights:
+    temporal: 0.2
+    spatial: 0.3
+    drift: 0.4
+    vessel: 0.1
+
+liability:
+  monte_carlo_iterations: 1000
+  discount_rate: 0.03
