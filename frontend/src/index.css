@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #0a1628;
+    --color-panel: #0f1f3a;
+    --color-border: #1e3a5f;
+  }
+
+  * {
+    @apply border-marine-800;
+  }
+
+  body {
+    @apply bg-dark-bg text-dark-text font-sans antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  html, body, #root {
+    @apply h-full w-full overflow-hidden;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-dark-panel border border-dark-border rounded-lg shadow-xl;
+  }
+
+  .panel-header {
+    @apply px-4 py-3 border-b border-dark-border bg-dark-panel/50 backdrop-blur-sm;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-marine-600 text-white hover:bg-marine-500 focus:ring-marine-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-dark-panel-hover text-dark-text border border-dark-border hover:bg-dark-border focus:ring-marine-500;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-500 focus:ring-red-500;
+  }
+
+  .btn-success {
+    @apply btn bg-emerald-600 text-white hover:bg-emerald-500 focus:ring-emerald-500;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 bg-dark-bg border border-dark-border rounded-md text-dark-text placeholder-dark-text-muted focus:outline-none focus:ring-2 focus:ring-marine-500 focus:border-transparent transition-all duration-200;
+  }
+
+  .select {
+    @apply input appearance-none bg-no-repeat bg-right pr-10;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%238b9fb8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-size: 1.5em 1.5em;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-dark-text-muted mb-1;
+  }
+
+  .card {
+    @apply panel p-4;
+  }
+
+  .metric-card {
+    @apply card flex items-center justify-between;
+  }
+
+  .metric-value {
+    @apply text-2xl font-mono font-semibold text-dark-text;
+  }
+
+  .metric-label {
+    @apply text-xs text-dark-text-muted uppercase tracking-wider;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-idle { @apply status-badge bg-gray-500/20 text-gray-400; }
+  .status-running { @apply status-badge bg-blue-500/20 text-blue-400; }
+  .status-completed { @apply status-badge bg-emerald-500/20 text-emerald-400; }
+  .status-error { @apply status-badge bg-red-500/20 text-red-400; }
+
+  .risk-low { @apply text-green-400; }
+  .risk-medium { @apply text-yellow-400; }
+  .risk-high { @apply text-orange-400; }
+  .risk-very-high { @apply text-red-400; }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.marine.700') transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.marine.700');
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-in {
+    animation: fadeIn 0.3s ease-out, slideUp 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* MapLibre overrides */
+.maplibregl-map {
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.maplibregl-popup {
+  @apply bg-dark-panel border border-dark-border rounded-lg shadow-xl;
+  max-width: 300px;
+}
+
+.maplibregl-popup-content {
+  @apply p-3;
+}
+
+.maplibregl-popup-close-button {
+  @apply text-dark-text-muted hover:text-dark-text transition-colors;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Leaflet/MapLibre control styling */
+.maplibregl-ctrl-group {
+  @apply bg-dark-panel border border-dark-border rounded-lg shadow-lg overflow-hidden;
+}
+
+.maplibregl-ctrl {
+  @apply bg-transparent border-0 text-dark-text hover:bg-dark-border transition-colors;
+}
+
+.maplibregl-ctrl-icon {
+  @apply text-dark-text;
+}
+
+/* Recharts customization */
+.recharts-tooltip-wrapper {
+  @apply bg-dark-panel border border-dark-border rounded-lg shadow-xl p-2;
+}
+
+.recharts-default-tooltip {
+  @apply bg-dark-panel border border-dark-border rounded-lg shadow-xl p-3 !important;
+}

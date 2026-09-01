@@ -1,0 +1,250 @@
+{
+  "type": "FeatureCollection",
+  "name": "OORCA ESI Features - Mumbai Offshore Region",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-mangrove-001",
+        "resource_type": "mangrove",
+        "resource_name": "Thane Creek Mangroves",
+        "sensitivity_score": 95,
+        "area_km2": 12.5,
+        "dominant_species": "Avicennia marina",
+        "conservation_status": "Protected"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.95, 19.15],
+          [73.05, 19.15],
+          [73.05, 19.25],
+          [72.95, 19.25],
+          [72.95, 19.15]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-mangrove-002",
+        "resource_type": "mangrove",
+        "resource_name": "Vasai Creek Mangroves",
+        "sensitivity_score": 90,
+        "area_km2": 8.3,
+        "dominant_species": "Rhizophora mucronata",
+        "conservation_status": "Reserved Forest"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.80, 19.30],
+          [72.90, 19.30],
+          [72.90, 19.40],
+          [72.80, 19.40],
+          [72.80, 19.30]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-coral-001",
+        "resource_type": "coral_reef",
+        "resource_name": "Angria Bank Coral Reef",
+        "sensitivity_score": 98,
+        "area_km2": 45.2,
+        "depth_range_m": "10-25",
+        "conservation_status": "Marine Protected Area"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.10, 16.80],
+          [73.30, 16.80],
+          [73.30, 17.00],
+          [73.10, 17.00],
+          [73.10, 16.80]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-seagrass-001",
+        "resource_type": "seagrass",
+        "resource_name": "Malvan Seagrass Meadows",
+        "sensitivity_score": 85,
+        "area_km2": 22.7,
+        "dominant_species": "Halophila ovalis",
+        "conservation_status": "Ecologically Sensitive Area"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.40, 16.10],
+          [73.55, 16.10],
+          [73.55, 16.25],
+          [73.40, 16.25],
+          [73.40, 16.10]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-fish-001",
+        "resource_type": "fish_habitat",
+        "resource_name": "Mumbai Offshore Fisheries Zone",
+        "sensitivity_score": 75,
+        "area_km2": 185.4,
+        "key_species": ["Bombay duck", "Pomfret", "Mackerel", "Shrimp"],
+        "fishing_intensity": "High"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.70, 18.80],
+          [73.00, 18.80],
+          [73.00, 19.20],
+          [72.70, 19.20],
+          [72.70, 18.80]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-fish-002",
+        "resource_type": "fish_habitat",
+        "resource_name": "Alibaug Coastal Fisheries",
+        "sensitivity_score": 70,
+        "area_km2": 92.1,
+        "key_species": ["Sardine", "Anchovy", "Crab"],
+        "fishing_intensity": "Medium"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.85, 18.50],
+          [73.00, 18.50],
+          [73.00, 18.80],
+          [72.85, 18.80],
+          [72.85, 18.50]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-turtle-001",
+        "resource_type": "sea_turtle_habitat",
+        "resource_name": "Velas Turtle Nesting Beach",
+        "sensitivity_score": 92,
+        "area_km2": 2.1,
+        "species": "Olive Ridley",
+        "nesting_season": "Nov-Mar",
+        "conservation_status": "Critically Important"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.05, 17.85],
+          [73.10, 17.85],
+          [73.10, 17.95],
+          [73.05, 17.95],
+          [73.05, 17.85]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-dolphin-001",
+        "resource_type": "dolphin_habitat",
+        "resource_name": "Sindhudurg Dolphin Sanctuary",
+        "sensitivity_score": 88,
+        "area_km2": 58.3,
+        "species": "Indian Ocean Humpback Dolphin",
+        "conservation_status": "Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.30, 15.90],
+          [73.50, 15.90],
+          [73.50, 16.10],
+          [73.30, 16.10],
+          [73.30, 15.90]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-protected-001",
+        "resource_type": "protected_area",
+        "resource_name": "Sanjay Gandhi National Park (Coastal Zone)",
+        "sensitivity_score": 80,
+        "area_km2": 15.6,
+        "designation": "National Park",
+        "iucn_category": "II"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.85, 19.15],
+          [72.95, 19.15],
+          [72.95, 19.25],
+          [72.85, 19.25],
+          [72.85, 19.15]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-protected-002",
+        "resource_type": "protected_area",
+        "resource_name": "Mahim Creek Bird Sanctuary",
+        "sensitivity_score": 82,
+        "area_km2": 1.8,
+        "key_species": ["Flamingo", "Heron", "Sandpiper"],
+        "designation": "Bird Sanctuary"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.83, 19.03],
+          [72.87, 19.03],
+          [72.87, 19.07],
+          [72.83, 19.07],
+          [72.83, 19.03]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "esi-saltmarsh-001",
+        "resource_type": "saltmarsh",
+        "resource_name": "Uran Saltmarshes",
+        "sensitivity_score": 78,
+        "area_km2": 6.4,
+        "dominant_species": "Suaeda fruticosa",
+        "conservation_status": "Wetland"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.92, 18.95],
+          [73.00, 18.95],
+          [73.00, 19.05],
+          [72.92, 19.05],
+          [72.92, 18.95]
+        ]]
+      }
+    }
+  ]
+}
